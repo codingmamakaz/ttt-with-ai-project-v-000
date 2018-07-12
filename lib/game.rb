@@ -76,8 +76,8 @@ class Game
     if !board.valid_move?(input)
       "invalid"
       current_player.move(board)
-    # else
-    #   current_player.update
+    else
+      current_player.update(input)
     end
 
   end
