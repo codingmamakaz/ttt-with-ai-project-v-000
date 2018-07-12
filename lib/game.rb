@@ -36,7 +36,48 @@ class Game
   end
 
   def won?
+    WIN_COMBINATIONS.detect do |win_combination|
+      if self.board.cells[win_combination[0]] == "X" && self.board.cells[win_combination[1]] == "X" && self.board.cells[win_combination[2]] == "X" ||
+        self.board.cells[win_combination[0]] == "O" && self.board.cells[win_combination[1]] == "O" && self.board.cells[win_combination[2]] == "O"
+        win_combination
+      else
+        false
+      end
+    end
   end
 
+  def draw?
+    if !won? && self.board.cells.all? {|cell| cell!= " "}
+      true
+    end
+  end
+
+  def over?
+    if draw? || won?
+      true
+    end
+  end
+
+  def winner
+    WIN_COMBINATIONS.detect do |win_combination|
+      if self.board.cells[win_combination[0]] == "X" && self.board.cells[win_combination[1]] == "X" && self.board.cells[win_combination[2]] == "X"
+        return "X"
+      elsif self.board.cells[win_combination[0]] == "O" && self.board.cells[win_combination[1]] == "O" && self.board.cells[win_combination[2]] == "O"
+        return "O"
+      else
+        nil
+      end
+    end
+  end
+
+  def turn
+    # binding.pry
+    valid_move = current_player.move(board).to_i.between?(1, 9)
+    if !valid_move
+      "invalid"
+      current_player.move(board)
+    end
+    
+  end
 
 end

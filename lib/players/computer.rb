@@ -7,5 +7,9 @@ module Players
       @token = token
     end
 
+    def move(board)
+      board = gets.strip
+    end
+
   end
 end
