@@ -77,7 +77,7 @@ class Game
       "invalid"
       current_player.move(board)
     end
-    
+      current_player == player_2
   end
 
 end
