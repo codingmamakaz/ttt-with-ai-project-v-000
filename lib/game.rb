@@ -72,12 +72,23 @@ class Game
 
   def turn
     # binding.pry
-    valid_move = current_player.move(board).to_i.between?(1, 9)
-    if !valid_move
+    input = current_player.move(board)
+    if !board.valid_move?(input)
       "invalid"
       current_player.move(board)
+    # else
+    #   current_player.update
     end
-      current_player == player_2
+
   end
+
+  # def turn
+  #   # binding.pry
+  #   valid_move = current_player.move(board).to_i.between?(1, 9)
+  #   if !valid_move
+  #     "invalid"
+  #     current_player.move(board)
+  #   end
+  # end
 
 end
