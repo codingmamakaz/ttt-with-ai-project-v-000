@@ -86,4 +86,7 @@ class Game
       turn
     end
 
+  end
+
+  
 end
