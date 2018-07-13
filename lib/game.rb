@@ -80,5 +80,14 @@ class Game
     end
   end
 
+  def play
+    # binding.pry
+    input = current_player.move(board)
+    if !board.full?
+      turn
+    else
+      board.over?
+    end
+  end
 
 end
