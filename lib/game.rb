@@ -70,19 +70,20 @@ class Game
     end
   end
 
-  def turn
-    input = current_player.move(board)
-         if !board.valid_move?(input)
-           "invalid"
-          current_player.move(board)
-        else
-            board.update(input, current_player)
-          end
 
+  def turn
+    binding.pry
+    input = current_player.move(board)
+      if !board.valid_move?(input)
+            turn
+      else
+        board.turn_count+1
+        board.update(input, current_player)
       end
+  end
+
 
   def play
-    # binding.pry
     while !over?
       turn
     end

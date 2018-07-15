@@ -8,10 +8,12 @@ module Players
     end
 
     def move(board)
-      if !board.cells.taken?(6)
-        board.cells[4]
+      if board.position(5)
+        return "5"
       end
     end
-
+  
   end
+
+
 end
