@@ -72,7 +72,7 @@ class Game
 
 
   def turn
-    binding.pry
+    # binding.pry
     input = current_player.move(board)
       if !board.valid_move?(input)
             turn
