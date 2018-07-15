@@ -9,6 +9,7 @@ module Players
 
     def move(board)
       board = gets.strip
+      board
     end
 
   end

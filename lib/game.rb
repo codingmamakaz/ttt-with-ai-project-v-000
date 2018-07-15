@@ -72,21 +72,27 @@ class Game
 
   def turn
     input = current_player.move(board)
-    if !board.valid_move?(input)
-      "invalid"
-      current_player.move(board)
-    else
-      board.update(input, current_player)
-    end
-  end
+         if !board.valid_move?(input)
+           "invalid"
+          current_player.move(board)
+        else
+            board.update(input, current_player)
+          end
+
+      end
 
   def play
     # binding.pry
-    until over?
+    while !over?
       turn
     end
 
+    if won?
+      puts"Congratulations #{winner}!"
+    elsif draw?
+      puts "Cat's Game!"
+    end
   end
 
-  
+
 end

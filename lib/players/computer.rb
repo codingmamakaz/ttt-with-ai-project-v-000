@@ -8,7 +8,9 @@ module Players
     end
 
     def move(board)
-      board = gets.strip
+      if !board.cells.taken?(6)
+        valid_move?(6)
+      end
     end
 
   end
