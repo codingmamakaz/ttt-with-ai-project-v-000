@@ -58,7 +58,6 @@ class Board
 
   def update(num, player)
     num = num.to_i - 1
-    binding.pry
     self.cells[num] = player.token
   end
 
