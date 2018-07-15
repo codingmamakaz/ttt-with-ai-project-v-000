@@ -9,7 +9,7 @@ module Players
 
     def move(board)
       if !board.cells.taken?(6)
-        valid_move?(6)
+        board.cells[4]
       end
     end
 
