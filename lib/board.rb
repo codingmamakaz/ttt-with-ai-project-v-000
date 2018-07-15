@@ -58,6 +58,7 @@ class Board
 
   def update(num, player)
     num = num.to_i - 1
+    binding.pry
     player = "X" || "O"
     self.cells[num] = player
   end
