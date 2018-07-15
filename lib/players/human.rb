@@ -3,10 +3,6 @@ module Players
 
     attr_accessor :cells, :token
 
-    # def initialize(token = nil)
-    #   @token = token
-    # end
-
     def move(board)
       board = gets.strip
       board
